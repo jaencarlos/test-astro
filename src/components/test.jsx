@@ -1,4 +1,4 @@
-import { useContentful } from "@smu-chile/pkg-unimarc-hooks";
+import { useContentful, useCategories } from "@smu-chile/pkg-unimarc-hooks";
 import { ClientPanel } from "../constants";
 
 const Component = () => {
@@ -10,7 +10,9 @@ const Component = () => {
     },
   });
 
-  console.log({ data, isLoading });
+  const categories = useCategories({ level: 2 });
+
+  console.log({ data, isLoading, categories });
 
   return <div>component of test</div>;
 };
